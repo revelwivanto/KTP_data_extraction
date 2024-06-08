@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">KTP</string>
+    <string name="text_extraction_from">KTP Text Extraction</string>
+    <string name="ktp_extract">ktp extract</string>
+    <string name="todo">TODO</string>
+    <string name="foto_ktp">Foto KTP</string>
+    <string name="full_name">Nama Lengkap</string>
+    <string name="name">Nama</string>
+    <string name="nik">NIK</string>
+    <string name="nomor_nik">Nomor NIK</string>
+    <string name="tempat_tgl_lahir">TTL</string>
+    <string name="tempat_tanggal_lahir">Tempat/Tanggal Lahir</string>
+    <string name="alamat">ALAMAT</string>
+    <string name="alamat_ktp">Alamat KTP</string>
+    <string name="extract_text">Extract Text</string>
+    <string name="extracted_info">Extracted info from KTP image will be shown below</string>
+</resources>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "4519002697",
+    "project_id": "text-extract-c0dc7",
+    "storage_bucket": "text-extract-c0dc7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:4519002697:android:216497f301d0ff5b68b598",
+        "android_client_info": {
+          "package_name": "com.example.ktp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxRu4rzKfrG8ax85_7SOD2lZXQpREWePk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
