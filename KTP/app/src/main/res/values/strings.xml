@@ -14,4 +14,21 @@
     <string name="alamat_ktp">Alamat KTP</string>
     <string name="extract_text">Extract Text</string>
     <string name="extracted_info">Extracted info from KTP image will be shown below</string>
+    <string name="ek_img_content">ExportKit Image</string>
+    <string name="ktp_extraction_string">Credit / Debit card</string>
+    <string name="name_on_card_string">Name on card</string>
+    <string name="name_on_card_ek1_string">Name on card</string>
+    <string name="name_on_card_ek2_string">Name on card</string>
+    <string name="k_string">Name on card</string>
+    <string name="extract_string">use this card</string>
+    <string name="extract_ek1_string">use this card</string>
+    <string name="app_name">database</string>
+    <string name="ek_img_content">ExportKit Image</string>
+    <string name="ktp_extraction_string">Credit / Debit card</string>
+    <string name="sweets_string">Sweets</string>
+    <string name="sweets_ek1_string">Sweets</string>
+    <string name="sweets_ek2_string">Sweets</string>
+    <string name="sweets_ek3_string">Sweets</string>
+    <string name="sweets_ek4_string">Sweets</string>
+    <string name="sweets_ek5_string">Sweets</string>
 </resources>

@@ -1,0 +1,287 @@
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent" android:layout_height="wrap_content" >
+	<!-- 
+	/*
+	 *	This content is generated from the API File Info.
+	 *	(Alt+Shift+Ctrl+I).
+	 *
+	 *	@desc 		
+	 *	@file 		database
+	 *	@date 		Monday 17th of June 2024 03:14:08 PM
+	 *	@title 		database
+	 *	@author 	
+	 *	@keywords 	
+	 *	@generator 	Export Kit v1.3.figma
+	 *
+	 */
+	-->
+	<ScrollView android:id="@+id/database" 
+		android:layout_width="wrap_content" 
+		android:layout_height="match_parent" >
+
+		<RelativeLayout android:id="@+id/content_container" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content" >
+
+
+
+			<RelativeLayout android:id="@+id/page_database_ek1"
+				android:layout_marginTop="0dp"
+				android:layout_marginStart="0dp"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				>
+
+				<View   android:id="@+id/_bg__database_ek2"
+					android:background="@drawable/_bg__database_ek2_shape"
+					 android:layout_marginStart="0dp"
+					android:layout_marginTop="0dp"
+					android:layout_width="414dp"
+					android:layout_height="896dp" />
+
+				<TextView android:id="@+id/ktp_extraction"
+					android:fontFamily="SF Pro Display"
+					android:textStyle="bold"
+					android:textSize="30sp"
+					android:textColor="@color/ktp_extraction_color"
+					android:layout_marginLeft="16dp"
+					android:layout_marginTop="102dp"
+					android:layout_width="291dp"
+					android:layout_height="62dp"
+					android:text="@string/ktp_extraction_string"
+					 />
+
+				<ImageView android:id="@+id/vector"
+					android:src="@drawable/vector"
+					android:contentDescription="vector"
+					 android:layout_marginStart="25dp"
+					android:layout_marginTop="58dp"
+					android:layout_width="6dp"
+					android:layout_height="12dp" />
+
+				<View   android:id="@+id/searchfield"
+					android:background="@drawable/searchfield_shape"
+					 android:layout_marginStart="16dp"
+					android:layout_marginTop="167dp"
+					android:layout_width="374dp"
+					android:layout_height="48dp" />
+
+				<ImageView android:id="@+id/vector_ek1"
+					android:src="@drawable/vector_ek1"
+					android:contentDescription="vector_ek1"
+					 android:layout_marginStart="31dp"
+					android:layout_marginTop="182dp"
+					android:layout_width="16dp"
+					android:layout_height="16dp" />
+
+				<ImageView android:id="@+id/vector_ek2"
+					android:src="@drawable/vector_ek2"
+					android:contentDescription="vector_ek2"
+					 android:layout_marginStart="44.65dp"
+					android:layout_marginTop="195.65dp"
+					android:layout_width="4.35dp"
+					android:layout_height="4.35dp" />
+
+				<View   android:id="@+id/card"
+					android:background="@drawable/card_shape"
+					 android:layout_marginStart="25dp"
+					android:layout_marginTop="243dp"
+					android:layout_width="177dp"
+					android:layout_height="211dp" />
+
+				<TextView android:id="@+id/sweets"
+					android:fontFamily="Roboto"
+					android:textStyle="bold"
+					android:textSize="18sp"
+					android:textColor="@color/ktp_extraction_color"
+					android:layout_marginLeft="41dp"
+					android:layout_marginTop="393dp"
+					android:layout_width="168dp"
+					android:layout_height="33dp"
+					android:text="@string/sweets_string"
+					 />
+
+				<View   android:id="@+id/media"
+					android:background="@drawable/media_shape"
+					 android:layout_marginStart="25dp"
+					android:layout_marginTop="243dp"
+					android:layout_width="177dp"
+					android:layout_height="140dp" />
+
+				<View   android:id="@+id/card_border"
+					android:background="@drawable/card_border_shape"
+					 android:layout_marginStart="25dp"
+					android:layout_marginTop="243dp"
+					android:layout_width="177dp"
+					android:layout_height="211dp" />
+
+				<View   android:id="@+id/card_ek1"
+					android:background="@drawable/card_ek1_shape"
+					 android:layout_marginStart="213dp"
+					android:layout_marginTop="243dp"
+					android:layout_width="177dp"
+					android:layout_height="211dp" />
+
+				<TextView android:id="@+id/sweets_ek1"
+					android:fontFamily="Roboto"
+					android:textStyle="bold"
+					android:textSize="18sp"
+					android:textColor="@color/ktp_extraction_color"
+					android:layout_marginLeft="229dp"
+					android:layout_marginTop="393dp"
+					android:layout_width="168dp"
+					android:layout_height="33dp"
+					android:text="@string/sweets_ek1_string"
+					 />
+
+				<View   android:id="@+id/media_ek1"
+					android:background="@drawable/media_ek1_shape"
+					 android:layout_marginStart="213dp"
+					android:layout_marginTop="243dp"
+					android:layout_width="177dp"
+					android:layout_height="140dp" />
+
+				<View   android:id="@+id/card_border_ek1"
+					android:background="@drawable/card_border_ek1_shape"
+					 android:layout_marginStart="213dp"
+					android:layout_marginTop="243dp"
+					android:layout_width="177dp"
+					android:layout_height="211dp" />
+
+				<View   android:id="@+id/card_ek2"
+					android:background="@drawable/card_ek2_shape"
+					 android:layout_marginStart="25dp"
+					android:layout_marginTop="464dp"
+					android:layout_width="177dp"
+					android:layout_height="211dp" />
+
+				<TextView android:id="@+id/sweets_ek2"
+					android:fontFamily="Roboto"
+					android:textStyle="bold"
+					android:textSize="18sp"
+					android:textColor="@color/ktp_extraction_color"
+					android:layout_marginLeft="41dp"
+					android:layout_marginTop="614dp"
+					android:layout_width="168dp"
+					android:layout_height="33dp"
+					android:text="@string/sweets_ek2_string"
+					 />
+
+				<View   android:id="@+id/media_ek2"
+					android:background="@drawable/media_ek2_shape"
+					 android:layout_marginStart="25dp"
+					android:layout_marginTop="464dp"
+					android:layout_width="177dp"
+					android:layout_height="140dp" />
+
+				<View   android:id="@+id/card_border_ek2"
+					android:background="@drawable/card_border_ek2_shape"
+					 android:layout_marginStart="25dp"
+					android:layout_marginTop="464dp"
+					android:layout_width="177dp"
+					android:layout_height="211dp" />
+
+				<View   android:id="@+id/card_ek3"
+					android:background="@drawable/card_ek3_shape"
+					 android:layout_marginStart="213dp"
+					android:layout_marginTop="464dp"
+					android:layout_width="177dp"
+					android:layout_height="211dp" />
+
+				<TextView android:id="@+id/sweets_ek3"
+					android:fontFamily="Roboto"
+					android:textStyle="bold"
+					android:textSize="18sp"
+					android:textColor="@color/ktp_extraction_color"
+					android:layout_marginLeft="229dp"
+					android:layout_marginTop="614dp"
+					android:layout_width="168dp"
+					android:layout_height="33dp"
+					android:text="@string/sweets_ek3_string"
+					 />
+
+				<View   android:id="@+id/media_ek3"
+					android:background="@drawable/media_ek3_shape"
+					 android:layout_marginStart="213dp"
+					android:layout_marginTop="464dp"
+					android:layout_width="177dp"
+					android:layout_height="140dp" />
+
+				<View   android:id="@+id/card_border_ek3"
+					android:background="@drawable/card_border_ek3_shape"
+					 android:layout_marginStart="213dp"
+					android:layout_marginTop="464dp"
+					android:layout_width="177dp"
+					android:layout_height="211dp" />
+
+				<View   android:id="@+id/card_ek4"
+					android:background="@drawable/card_ek4_shape"
+					 android:layout_marginStart="25dp"
+					android:layout_marginTop="685dp"
+					android:layout_width="177dp"
+					android:layout_height="211dp" />
+
+				<TextView android:id="@+id/sweets_ek4"
+					android:fontFamily="Roboto"
+					android:textStyle="bold"
+					android:textSize="18sp"
+					android:textColor="@color/ktp_extraction_color"
+					android:layout_marginLeft="41dp"
+					android:layout_marginTop="853dp"
+					android:layout_width="168dp"
+					android:layout_height="33dp"
+					android:text="@string/sweets_ek4_string"
+					 />
+
+				<View   android:id="@+id/media_ek4"
+					android:background="@drawable/media_ek4_shape"
+					 android:layout_marginStart="25dp"
+					android:layout_marginTop="685dp"
+					android:layout_width="177dp"
+					android:layout_height="140dp" />
+
+				<View   android:id="@+id/card_border_ek4"
+					android:background="@drawable/card_border_ek4_shape"
+					 android:layout_marginStart="25dp"
+					android:layout_marginTop="685dp"
+					android:layout_width="177dp"
+					android:layout_height="211dp" />
+
+				<View   android:id="@+id/card_ek5"
+					android:background="@drawable/card_ek5_shape"
+					 android:layout_marginStart="213dp"
+					android:layout_marginTop="685dp"
+					android:layout_width="177dp"
+					android:layout_height="211dp" />
+
+				<TextView android:id="@+id/sweets_ek5"
+					android:fontFamily="Roboto"
+					android:textStyle="bold"
+					android:textSize="18sp"
+					android:textColor="@color/ktp_extraction_color"
+					android:layout_marginLeft="229dp"
+					android:layout_marginTop="853dp"
+					android:layout_width="168dp"
+					android:layout_height="33dp"
+					android:text="@string/sweets_ek5_string"
+					 />
+
+				<View   android:id="@+id/media_ek5"
+					android:background="@drawable/media_ek5_shape"
+					 android:layout_marginStart="213dp"
+					android:layout_marginTop="685dp"
+					android:layout_width="177dp"
+					android:layout_height="140dp" />
+
+				<View   android:id="@+id/card_border_ek5"
+					android:background="@drawable/card_border_ek5_shape"
+					 android:layout_marginStart="213dp"
+					android:layout_marginTop="685dp"
+					android:layout_width="177dp"
+					android:layout_height="211dp" />
+
+			</RelativeLayout>
+		</RelativeLayout>
+
+	</ScrollView>
+</HorizontalScrollView>
