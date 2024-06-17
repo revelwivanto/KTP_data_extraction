@@ -21,13 +21,19 @@ public class KtpProcessing {
             return null;
         }
         TreeMap<String, String> map = new TreeMap<>();
-
+        
+        // Mengambil block-block teks dari hasil deteksi teks
         for (FirebaseVisionText.Block block: text.getBlocks()){
+            // Mengambil line-line dari setiap block
             for (FirebaseVisionText.Line line: block.getLines()){
+                // Mendapatkan pembatas dari setiap line
                 Rect rect = line.getBoundingBox();
                 assert rect != null;
+                // Mendapatkan koordinat tengah y dari kotak pembatas (y-coordinate)
                 String y = String.valueOf(rect.exactCenterY());
+                // Mendapatkan teks dari setiap line dalam format huruf kecil
                 String lineText = line.getText().toLowerCase();
+                // Menyimpan nilai y dan lineText ke dalam TreeMap map dengan key y dan value lineText
                 map.put(y, lineText);
             }
         }
@@ -37,25 +43,29 @@ public class KtpProcessing {
 
         int i = 0;
         //mencari nomor ktp (nik)
-        String regx = "\\b\\w{16}\\b";
+        String regx = "\\b\\d{16}\\b";
         for (i = 0; i<orderedData.size(); i++){
             if (orderedData.get(i).matches(regx)){
-                String nik = orderedData.get(i).replace('l', '6');
+                String nik = orderedData.get(i);
                 dataMap.put("nik", nik);
                 break;
             }
         }
 
         //mencari nama
+        String regex = ".*, \\d{2}-\\d{2}-\\d{4}";
         for (i=0; i<orderedData.size(); i++) {
-            if (orderedData.get(i).contains("nama")) {
+            if (orderedData.get(i).contains("nama") || orderedData.get(i).contains("namae")) {
+                if (orderedData.get(i+1).matches(regex)){
+                    dataMap.put("nama", orderedData.get(i-1));
+                    break;
+                }
                 dataMap.put("nama", orderedData.get(i+1));
                 break;
             }
         }
 
         //searching for tempat tanggal lahir
-        String regex = ".*, \\d{2}-\\d{2}-\\d{4}";
         for (i=0; i<orderedData.size(); i++) {
             if (orderedData.get(i).matches(regex)) {
                 dataMap.put("ttl", orderedData.get(i));
