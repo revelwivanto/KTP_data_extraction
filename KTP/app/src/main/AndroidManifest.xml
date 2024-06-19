@@ -9,6 +9,8 @@
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="32"
         tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
 
     <application
         android:allowBackup="true"
@@ -23,6 +25,8 @@
         <activity
             android:name=".ktpkuCardActivity"
             android:exported="false" />
+        <activity android:name=".DisplayKTPActivity"></activity>
+
 
         <provider
             android:name="androidx.core.content.FileProvider"

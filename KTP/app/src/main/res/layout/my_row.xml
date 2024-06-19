@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/mainLayout">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp">
+
+            <ImageView android:id="@+id/ttd"
+                android:src="@drawable/vector_ek2"
+                android:contentDescription="vector_ek2"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+            <TextView
+                android:id="@+id/NIK_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="nik"
+                app:layout_constraintStart_toEndOf="@+id/ttd"
+                app:layout_constraintTop_toTopOf="@+id/ttd" />
+
+            <TextView
+                android:id="@+id/nama_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="nama"
+                app:layout_constraintStart_toStartOf="@+id/NIK_txt"
+                app:layout_constraintTop_toBottomOf="@+id/NIK_txt" />
+
+            <TextView
+                android:id="@+id/ttl_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TTL"
+                app:layout_constraintStart_toStartOf="@+id/nama_txt"
+                app:layout_constraintTop_toBottomOf="@+id/nama_txt" />
+            <TextView
+                android:id="@+id/alamat_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Alamat"
+                app:layout_constraintStart_toStartOf="@+id/ttl_txt"
+                app:layout_constraintTop_toBottomOf="@+id/ttl_txt" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

@@ -1,20 +1,5 @@
 <HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent" android:layout_height="wrap_content" >
-    <!--
-    /*
-     *	This content is generated from the API File Info.
-     *	(Alt+Shift+Ctrl+I).
-     *
-     *	@desc
-     *	@file 		take_pic
-     *	@date 		Monday 17th of June 2024 03:13:10 PM
-     *	@title 		projek
-     *	@author
-     *	@keywords
-     *	@generator 	Export Kit v1.3.figma
-     *
-     */
-    -->
     <ScrollView android:id="@+id/take_pic"
         android:layout_width="wrap_content"
         android:layout_height="match_parent" >
@@ -55,27 +40,28 @@
                         android:layout_width="234.24dp"
                         android:layout_height="163.86dp" />
 
-                    <ImageView android:id="@+id/vector_ek1"
-                        android:src="@drawable/vector_ek1"
-                        android:contentDescription="vector_ek1"
+                    <ImageView
+                        android:id="@+id/vector_ek1"
+                        android:layout_width="362dp"
+                        android:layout_height="264dp"
                         android:layout_marginStart="0dp"
                         android:layout_marginTop="0dp"
-                        android:layout_width="362dp"
-                        android:layout_height="264dp" />
+                        android:contentDescription="vector_ek1"
+                        android:src="@drawable/vector_ek1" />
 
                 </RelativeLayout>
 
-                <TextView android:id="@+id/ktp_extraction"
-                    android:fontFamily="SF Pro Display"
-                    android:textStyle="bold"
-                    android:textSize="30sp"
-                    android:textColor="@color/ktp_extraction_color"
+                <TextView
+                    android:id="@+id/ktp_extraction"
+                    android:layout_width="234dp"
+                    android:layout_height="38dp"
                     android:layout_marginLeft="84dp"
                     android:layout_marginTop="8dp"
-                    android:layout_width="291dp"
-                    android:layout_height="62dp"
-                    android:text="@string/ktp_extraction_string"
-                    />
+                    android:fontFamily="SF Pro Display"
+                    android:text="Ambil Foto KTP"
+                    android:textColor="@color/ktp_extraction_color"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
 
                 <View   android:id="@+id/container"
                     android:background="@drawable/container_shape"
@@ -100,7 +86,7 @@
                         android:layout_marginTop="0dp"
                         android:layout_width="107dp"
                         android:layout_height="32dp"
-                        android:text="@string/name_on_card_string"
+                        android:text="NIK"
                         />
 
                 </RelativeLayout>
@@ -128,7 +114,7 @@
                         android:layout_marginTop="0dp"
                         android:layout_width="107dp"
                         android:layout_height="32dp"
-                        android:text="@string/name_on_card_ek1_string"
+                        android:text="Nama"
                         />
 
                 </RelativeLayout>
