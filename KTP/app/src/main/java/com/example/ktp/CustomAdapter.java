@@ -1,15 +1,20 @@
-// CustomAdapter.java
 package com.example.ktp;
 
+import android.app.Activity;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+import android.content.Intent;
+import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -17,16 +22,17 @@ import java.util.ArrayList;
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder> {
 
     private Context context;
-    private ArrayList nik, nama, ttl, alamat;
-    private ArrayList<byte[]> signature;
+    private Activity activity;
+    private ArrayList KTP_NIK, KTP_nama, KTP_TTL, KTP_alamat;
 
-    CustomAdapter(Context context, ArrayList nik, ArrayList nama, ArrayList ttl, ArrayList alamat, ArrayList<byte[]> signature){
+    CustomAdapter( Context context, ArrayList KTP_NIK, ArrayList KTP_nama, ArrayList KTP_TTL,
+                  ArrayList KTP_alamat){
+        this.activity = activity;
         this.context = context;
-        this.nik = nik;
-        this.nama = nama;
-        this.ttl = ttl;
-        this.alamat = alamat;
-        this.signature = signature;
+        this.KTP_NIK = KTP_NIK;
+        this.KTP_nama = KTP_nama;
+        this.KTP_TTL = KTP_TTL;
+        this.KTP_alamat = KTP_alamat;
     }
 
     @NonNull
@@ -37,36 +43,33 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         return new MyViewHolder(view);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.nik_txt.setText(String.valueOf(nik.get(position)));
-        holder.nama_txt.setText(String.valueOf(nama.get(position)));
-        holder.ttl_txt.setText(String.valueOf(ttl.get(position)));
-        holder.alamat_txt.setText(String.valueOf(alamat.get(position)));
-        byte[] signatureBytes = signature.get(position);
-        if (signatureBytes != null) {
-            Bitmap bitmap = BitmapFactory.decodeByteArray(signatureBytes, 0, signatureBytes.length);
-            holder.ttd.setImageBitmap(bitmap);
-        }
+    public void onBindViewHolder(@NonNull final MyViewHolder holder, final int position) {
+        holder.KTP_NIK_txt.setText(String.valueOf(KTP_NIK.get(position)));
+        holder.KTP_nama_txt.setText(String.valueOf(KTP_nama.get(position)));
+        holder.KTP_TTL_txt.setText(String.valueOf(KTP_TTL.get(position)));
+        holder.KTP_alamat_txt.setText(String.valueOf(KTP_alamat.get(position)));
+
     }
 
     @Override
     public int getItemCount() {
-        return nik.size();
+        return KTP_NIK.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView nik_txt, nama_txt, ttl_txt, alamat_txt;
-        ImageView ttd;
+        TextView KTP_NIK_txt, KTP_nama_txt, KTP_TTL_txt, KTP_alamat_txt;
 
-        public MyViewHolder(@NonNull View itemView) {
+        MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            nik_txt = itemView.findViewById(R.id.NIK_txt);
-            nama_txt = itemView.findViewById(R.id.nama_txt);
-            ttl_txt = itemView.findViewById(R.id.ttl_txt);
-            alamat_txt = itemView.findViewById(R.id.alamat_txt);
-            ttd = itemView.findViewById(R.id.ttd);
+            KTP_NIK_txt = itemView.findViewById(R.id.KTP_NIK_txt);
+            KTP_nama_txt = itemView.findViewById(R.id.KTP_nama_txt);
+            KTP_TTL_txt = itemView.findViewById(R.id.KTP_TTL_txt);
+            KTP_alamat_txt = itemView.findViewById(R.id.KTP_alamat_txt);
         }
+
     }
+
 }

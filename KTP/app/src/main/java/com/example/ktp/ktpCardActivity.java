@@ -57,7 +57,6 @@ public class ktpCardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ktp_card);
 
-        // Menginisialisasi komponen UI
         frontImageView = findViewById(R.id.imageView);
         ttdImageView = findViewById(R.id.ttd);
         nama = findViewById(R.id.name_edit_text);
@@ -66,6 +65,7 @@ public class ktpCardActivity extends AppCompatActivity {
         alamat = findViewById(R.id.alamat_edit_text);
         reset = findViewById(R.id.reset);
         save = findViewById(R.id.save);
+
         // In ktpCardActivity.java, add a button to navigate to DisplayKTPActivity
         Button viewData = findViewById(R.id.viewData);
         viewData.setOnClickListener(new View.OnClickListener() {
@@ -87,14 +87,14 @@ public class ktpCardActivity extends AppCompatActivity {
                     ttdImageView.setDrawingCacheEnabled(true);
                     ttdImageView.buildDrawingCache();
                     Bitmap signatureBitmap = ((BitmapDrawable) ttdImageView.getDrawable()).getBitmap();
-                    myDB.addKTP(Integer.valueOf(nik.getText().toString().trim()),
+                    myDB.addKTP(Long.valueOf(nik.getText().toString().trim()),  // Changed to Long.valueOf
                             nama.getText().toString().trim(),
                             ttl.getText().toString().trim(),
                             alamat.getText().toString().trim(),
                             signatureBitmap);
                 } else {
                     // Handle case where ttdImageView is null
-                    myDB.addKTP(Integer.valueOf(nik.getText().toString().trim()),
+                    myDB.addKTP(Long.valueOf(nik.getText().toString().trim()),  // Changed to Long.valueOf
                             nama.getText().toString().trim(),
                             ttl.getText().toString().trim(),
                             alamat.getText().toString().trim(),
@@ -102,6 +102,7 @@ public class ktpCardActivity extends AppCompatActivity {
                 }
             }
         });
+
 
         // Menambahkan teks ke Button reset
         reset.setText("R" + "\n" + "E" + "\n" + "S" + "\n" + "E" + "\n" + "T");
