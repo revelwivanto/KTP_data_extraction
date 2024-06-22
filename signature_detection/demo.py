@@ -2,14 +2,15 @@ import sys
 import os
 import cv2
 import numpy as np
-
+from watchdog.observers import Observer
+from watchdog.events import FileSystemEventHandler
 from src.signature_detect.cropper import Cropper
 from src.signature_detect.extractor import Extractor
 from src.signature_detect.loader import Loader
 from PIL import Image, ImageEnhance
 
 def increase_brightness(img, value=60):
-    for _ in range(4):  # Iterate 3 times
+    for _ in range(4):  # Iterate 4 times
         if len(img.shape) == 2:  # Check if the image is grayscale
             img = cv2.cvtColor(img, cv2.COLOR_GRAY2BGR)
         hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
@@ -25,13 +26,13 @@ def increase_brightness(img, value=60):
             img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     return img
 
-def main(file_path: str) -> None:
+def process_image(file_path: str) -> None:
     # Open the image and convert it to grayscale using PIL
     wbimg = Image.open(file_path).convert('L')
     
     # Save the grayscale image
     base_name = os.path.splitext(os.path.basename(file_path))[0]
-    image_filename = os.path.join('data/input', f"wbimg_{base_name}.png")
+    image_filename = os.path.join('data/postprocessing', f"wbimg_{base_name}.png")
     wbimg.save(image_filename)
     
     # Read the saved grayscale image with OpenCV
@@ -56,7 +57,7 @@ def main(file_path: str) -> None:
     wbsharpbrightimg_pil = ImageEnhance.Color(wbsharpbrightimg_pil).enhance(3.0)
     
     # Save the brightened, sharpened, and enhanced image
-    bright_sharp_image_filename = os.path.join('data/input', f"wbimgsharpbright_{base_name}.png")
+    bright_sharp_image_filename = os.path.join('data/postprocessing', f"wbimgsharpbright_{base_name}.png")
     wbsharpbrightimg_pil.save(bright_sharp_image_filename)
     
     # Continue with the existing pipeline using the enhanced image file
@@ -75,13 +76,23 @@ def main(file_path: str) -> None:
     except Exception as e:
         print(e)
 
+class NewFileHandler(FileSystemEventHandler):
+    def on_created(self, event):
+        if not event.is_directory and event.src_path.endswith(('.png', '.jpg', '.jpeg')):
+            print(f"New file detected: {event.src_path}")
+            process_image(event.src_path)
+
 if __name__ == "__main__":
-    file_path = None
-    for i in range(len(sys.argv)):
-        if sys.argv[i] == "--file":
-            file_path = sys.argv[i + 1]
-    if file_path is None:
-        print("Need input file")
-        print("python demo.py --file my-file.pdf")
-    else:
-        main(file_path)
+    input_dir = "C:\\Users\\revel\\Downloads\\KTP_data_extraction-main\\KTP_data_extraction-main\\signature_detection\\data\\input"
+    
+    event_handler = NewFileHandler()
+    observer = Observer()
+    observer.schedule(event_handler, path=input_dir, recursive=False)
+    observer.start()
+
+    try:
+        while True:
+            pass
+    except KeyboardInterrupt:
+        observer.stop()
+    observer.join()
