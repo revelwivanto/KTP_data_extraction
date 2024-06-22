@@ -45,6 +45,10 @@ dependencies {
 
     implementation("com.google.firebase:firebase-ml-vision:16.0.0")
 
+    implementation("com.squareup.retrofit2:retrofit:2.1.0")
+    implementation("com.google.code.gson:gson:2.10")
+    implementation("com.squareup.retrofit2:converter-gson:2.1.0")
+
     implementation("com.google.android.gms:play-services-vision:20.1.3")
     implementation("com.google.android.gms:play-services-vision-common:19.1.3")
 
