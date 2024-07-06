@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home"
+        android:title="@string/home"
+        android:icon="@drawable/baseline_home_24"/>
+
+    <item
+        android:id="@+id/ktp1"
+        android:title="@string/ktp1"
+        android:icon="@drawable/baseline_add_card_24"/>
+
+    <item
+        android:id="@+id/ktp2"
+        android:title="@string/ktp2"
+        android:icon="@drawable/baseline_aod_24"/>
+
+</menu>

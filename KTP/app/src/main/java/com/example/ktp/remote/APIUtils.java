@@ -10,7 +10,7 @@ public class APIUtils {
 
     private APIUtils() {}
 
-    public static final String API_URL = "http://192.168.0.106:5000/";
+    public static final String API_URL = "http://192.168.0.102:5000/";
 
     public static FileService getFileService() {
         Gson gson = new GsonBuilder()

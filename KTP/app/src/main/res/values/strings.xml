@@ -28,4 +28,11 @@
     <string name="sweets_ek3_string">Sweets</string>
     <string name="sweets_ek4_string">Sweets</string>
     <string name="sweets_ek5_string">Sweets</string>
+    <string name="home">Home</string>
+    <string name="ktp1">ktp1</string>
+    <string name="ktp2">ktp2</string>
+    <string name="ox_collective">KTP Extract</string>
+    <string name="description">Aplikasi ini akan mempermudah mengisi form data KTP dengan capture foto KTP dengan kamera hp. \n\n\n\n</string>
+    <string name="contact_us">Lanjutkan</string>
+
 </resources>

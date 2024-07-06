@@ -4,8 +4,10 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.text.format.DateFormat;
@@ -24,6 +26,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 
+import com.bumptech.glide.Glide;
 import com.example.ktp.PostProcessing.KtpProcessing;
 import com.example.ktp.Utils.CameraUtils;
 import com.example.ktp.model.FileInfo;
@@ -39,6 +42,8 @@ import com.google.firebase.ml.vision.text.FirebaseVisionTextDetector;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
 import java.util.Date;
 import java.util.HashMap;
 
@@ -65,6 +70,7 @@ public class ktpCardActivity extends AppCompatActivity {
     private EditText nik, nama, ttl, alamat; // EditText untuk menginput informasi yang diperlukan
     private Button reset, save; // Button untuk mereset inputan informasi dan gambar KTP
     private FileService fileService;
+    private ImageView signatureImageView;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -73,13 +79,13 @@ public class ktpCardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_ktp_card);
 
         frontImageView = findViewById(R.id.imageView);
-        ttdImageView = findViewById(R.id.ttd);
         nama = findViewById(R.id.name_edit_text);
         nik = findViewById(R.id.nik_edit_text);
         ttl = findViewById(R.id.ttl_edit_text);
         alamat = findViewById(R.id.alamat_edit_text);
         reset = findViewById(R.id.reset);
         save = findViewById(R.id.save);
+        signatureImageView = findViewById(R.id.ttd);
 
         fileService = APIUtils.getFileService();
 
@@ -92,6 +98,7 @@ public class ktpCardActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
 
 
         save.setOnClickListener(new View.OnClickListener() {
@@ -167,6 +174,14 @@ public class ktpCardActivity extends AppCompatActivity {
 
     // Melakukan pemrosesan teks dari gambar KTP untuk mendapatkan informasi yang diperlukan
     public void extractInfo(View view) {
+        // Replace with your server's URL
+        String serverUrl = "http://192.168.0.102:5000/upload";
+
+        // Example URL for signature image
+        String imageUrl = "http://192.168.0.102:5000/uploads/cropped_region_1.png";
+
+        new DownloadImageTask().execute(imageUrl);
+
         if (mImageBitmap != null) {
             FirebaseVisionTextDetector detector = FirebaseVision.getInstance().getVisionTextDetector();
             FirebaseVisionImage image = FirebaseVisionImage.fromBitmap(mImageBitmap);
@@ -186,6 +201,31 @@ public class ktpCardActivity extends AppCompatActivity {
             });
         } else {
             Toast.makeText(this, "Please take the image first", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
+
+        @Override
+        protected Bitmap doInBackground(String... urls) {
+            String imageUrl = urls[0];
+            Bitmap bitmap = null;
+            try {
+                InputStream in = new URL(imageUrl).openStream();
+                bitmap = BitmapFactory.decodeStream(in);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return bitmap;
+        }
+
+        @Override
+        protected void onPostExecute(Bitmap bitmap) {
+            if (bitmap != null) {
+                signatureImageView.setImageBitmap(bitmap);
+            } else {
+                Toast.makeText(ktpCardActivity.this, "Failed to load image", Toast.LENGTH_SHORT).show();
+            }
         }
     }
 
